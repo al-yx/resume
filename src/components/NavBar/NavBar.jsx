@@ -2,99 +2,75 @@ import { RiCloseLine, RiMenu2Line } from "@remixicon/react";
 import { useState } from "react";
 
 const NavBar = () => {
-  const [menu, openMenu] = useState(false);
-  const [showMenu, setShowMenu] = useState(true);
+  const [menu, setMenu] = useState(false);
 
-  // return (
-  //   <div style={{ padding: "20px", background: "black" }}>
-  //     <Anchor
-  //       direction="horizontal"
-  //       items={[
-  //         {
-  //           key: "about",
-  //           href: "#About",
-  //           title: <span className="text-white font-bold">About</span>,
-  //         },
-  //         {
-  //           key: "education",
-  //           href: "#Education",
-  //           title: <span className="text-white font-bold">Education</span>,
-  //         },
-  //         {
-  //           key: "experience",
-  //           href: "#Experience",
-  //           title: <span className="text-white font-bold">Tech Stack</span>,
-  //         },
-  //         {
-  //           key: "projects",
-  //           href: "#Projects",
-  //           title: <span className="text-white font-bold">Projects</span>,
-  //         },
-  //         {
-  //           key: "footer",
-  //           href: "#Footer",
-  //           title: <span className="text-white font-bold">Contact Me</span>,
-  //         },
-  //       ]}
-  //     />
-  //   </div>
-  // );
   return (
-    <nav className="flex flex-wrap justify-end md:items-center text-white px-10 pt-6 md:px-20 ">
-      {/* <span className="text-xl font-bolf tracking-widest">Shruti Kumari </span> */}
-      <span>
-        <ul
-          className={` ${
-            menu ? "block" : "hidden"
-          } x-24 py-2 mt-4 font-semibold md:mt-5 bg-black px-2 rounded-xl bg-opacity-30 md:border-none text-center md:bg-transparent md:static md:mx-0 md:flex gap-6`}
-        >
-          <a href="#About">
-            <li className="text-md transition-all duration-300 p-1 md:p-0">
-              About
-            </li>
-          </a>
+    <nav className="flex justify-between items-center text-white px-6 pt-6 md:px-20">
+      <span className="text-xl font-bold tracking-widest">Shruti Kumari</span>
+      {/* Mobile Menu Toggle Button */}
+      <div className="md:hidden">
+        {menu ? (
+          <RiCloseLine
+            size={30}
+            className="transition-all duration-300"
+            onClick={() => setMenu(false)}
+          />
+        ) : (
+          <RiMenu2Line
+            size={30}
+            className="transition-all duration-300"
+            onClick={() => setMenu(true)}
+          />
+        )}
+      </div>
 
-          <a href="#Education">
-            <li className="text-md transition-all duration-300 p-1 md:p-0">
-              Experience
-            </li>
+      {/* Menu Items */}
+      <ul
+        className={`${
+          menu ? "block" : "hidden"
+        } md:flex md:gap-6 md:items-center md:static absolute top-16 left-0 w-full bg-black md:bg-transparent bg-opacity-80 md:py-0 py-4 text-center md:text-left z-10`}
+      >
+        <li className="py-2 md:py-0">
+          <a
+            href="#About"
+            className="text-md transition-all duration-300 hover:text-gray-400"
+          >
+            About
           </a>
-          <a href="#Experience">
-            <li className="text-md transition-all duration-300 p-1 md:p-0">
-              Tech Stack
-            </li>
+        </li>
+        <li className="py-2 md:py-0">
+          <a
+            href="#Experience"
+            className="text-md transition-all duration-300 hover:text-gray-400"
+          >
+            Experience
           </a>
-          <a href="#Projects">
-            <li className="text-md transition-all duration-300 p-1 md:p-0">
-              Projects
-            </li>
+        </li>
+        <li className="py-2 md:py-0">
+          <a
+            href="#TechStack"
+            className="text-md transition-all duration-300 hover:text-gray-400"
+          >
+            Tech Stack
           </a>
-          <a href="#Footer">
-            <li className="text-md transition-all duration-300 p-1 md:p-0">
-              Contact Me
-            </li>
+        </li>
+        <li className="py-2 md:py-0">
+          <a
+            href="#Projects"
+            className="text-md transition-all duration-300 hover:text-gray-400"
+          >
+            Projects
           </a>
-        </ul>
-      </span>
-      {showMenu ? (
-        <RiMenu2Line
-          size={30}
-          className="md:hidden absolute right-10 top-6 transition-all duration-300"
-          onClick={() => {
-            openMenu(!menu);
-            setShowMenu(!showMenu);
-          }}
-        />
-      ) : (
-        <RiCloseLine
-          size={30}
-          className="md:hidden absolute right-10 top-6 transition-all duration-300"
-          onClick={() => {
-            openMenu(menu);
-            setShowMenu(showMenu);
-          }}
-        />
-      )}
+        </li>
+        <li className="py-2 md:py-0">
+          <a
+            href="#Footer"
+            className="text-md transition-all duration-300 hover:text-gray-400"
+          >
+            Contact Me
+          </a>
+        </li>
+      </ul>
     </nav>
   );
 };
