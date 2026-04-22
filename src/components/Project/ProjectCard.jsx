@@ -1,3 +1,4 @@
+
 const ProjectCard = ({ title, main, image, demoLink, githubLink }) => {
   return (
     <div className="p-6 flex flex-col w-full h-full text-white shadow-xl shadow-grey-900 rounded-3xl bg-[#2c2c2c]">
@@ -35,3 +36,5 @@ const ProjectCard = ({ title, main, image, demoLink, githubLink }) => {
 };
 
 export default ProjectCard;
+
+

@@ -76,7 +76,7 @@ const Home = () => {
         {/* Buttons Section */}
         <div className="flex sm:flex-row md:flex-row gap-4">
           <button
-            onClick={() => window.open("./shruti-2024.pdf")}
+            onClick={() => window.open("./shruti-resume-2026.pdf")}
             className="flex items-center justify-center text-white py-2 px-4 text-sm md:text-lg hover:opacity-80 duration-300 hover:scale-105 rounded-3xl bg-black border-2 border-green-800"
           >
             <DownloadOutlined className="mr-2" />

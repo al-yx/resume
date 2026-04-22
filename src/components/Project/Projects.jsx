@@ -4,6 +4,7 @@ import AirbusImage from "../../assests/airbusImage.png";
 import NotesImage from "../../assests/notesApp.png";
 import MovieApp from "../../assests/movieApp.png";
 import RealEstate from "../../assests/realEstate.png";
+import PokedexImage from "../../assests/pokedex.png"; 
 
 const Projects = () => {
   return (
@@ -12,6 +13,13 @@ const Projects = () => {
         My Work
       </h1>
       <Carousel arrows autoplay>
+        <ProjectCard
+          image={PokedexImage}
+          title="Pokédex App"
+          main="A modern Pokédex web application built with React.js. Features include searching Pokémon by name, adding favorites, leveling up, and removing Pokémon from your collection. The UI is styled with a custom space-themed design and includes persistent state management."
+          demoLink="https://shruti-pokedex.netlify.app/"
+          githubLink="https://github.com/al-yx/pokedex-app"
+        />
         <ProjectCard
           image={AirbusImage}
           title="Airbus- Detection of Faulty Wiring and Structural Damage in Aircrafts"
